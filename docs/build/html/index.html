@@ -1,40 +1,239 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Temporal Compression Study &mdash; temporal_compression 1 documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="temporal_compression 1 documentation" href="#" />
-   
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Temporal Compression Study &mdash; temporal_compression 1 documentation</title>
+  
 
-  </head>
-  <body role="document">  
+  
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="temporal_compression 1 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> temporal_compression
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Temporal Compression Study</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#study-1">1. Study 1</a><ul>
+<li><a class="reference internal" href="#import-and-format-matrix">1.1 Import and Format Matrix</a></li>
+<li><a class="reference internal" href="#filtering-lost-trials">1.2 Filtering Lost Trials</a><ul>
+<li><a class="reference internal" href="#difference-scores">1.2.1 Difference Scores</a></li>
+<li><a class="reference internal" href="#figure-1-distribution-of-difference-scores">Figure 1. Distribution of difference scores</a></li>
+<li><a class="reference internal" href="#top-quartile-filter">1.2.2 Top Quartile Filter</a></li>
+<li><a class="reference internal" href="#three-standard-deviations-filter">1.2.3 Three Standard Deviations Filter</a></li>
+<li><a class="reference internal" href="#comparison-of-filters">1.2.4 Comparison of filters</a></li>
+<li><a class="reference internal" href="#figure-2-comparison-of-difference-scores-after-filtering">Figure 2. Comparison of difference scores after filtering</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#descriptive-statistics">1.3 Descriptive Statistics</a><ul>
+<li><a class="reference internal" href="#demographic-information">1.3.1 Demographic Information</a></li>
+<li><a class="reference internal" href="#table-1-descriptive-stats-for-demographics">Table 1. Descriptive stats for demographics</a></li>
+<li><a class="reference internal" href="#task-performance">1.3.2 Task Performance</a></li>
+<li><a class="reference internal" href="#table-2-descriptive-statistics-for-performance-variables">Table 2. Descriptive statistics for performance variables</a></li>
+<li><a class="reference internal" href="#simulation-variables">1.3.3 Simulation Variables</a></li>
+<li><a class="reference internal" href="#table-3-descriptive-statistics-for-simulation-variables">Table 3. Descriptive statistics for simulation variables</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mean-centering-simulation-time">1.4 Mean Centering Simulation Time</a><ul>
+<li><a class="reference internal" href="#figure-3-comparison-of-observed-and-mean-centered-simulation-times">Figure 3. Comparison of observed and mean centered simulation times</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#temporal-compression-rate">1.5 Temporal Compression Rate</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#study-two-manipulating-movement-speeds">2. Study Two - Manipulating Movement Speeds</a><ul>
+<li><a class="reference internal" href="#id1">2.1 Import and Format Matrix</a><ul>
+<li><a class="reference internal" href="#slow-movement-condition">2.1.1 Slow Movement Condition</a></li>
+<li><a class="reference internal" href="#fast-movement-condition">2.1.2 Fast Movement Condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#demographics">2.2. Demographics</a><ul>
+<li><a class="reference internal" href="#id2">2.2.1 Slow Movement Condition</a></li>
+<li><a class="reference internal" href="#table-4-demographics-for-the-slow-movement-condition">Table 4. Demographics for the slow movement condition</a></li>
+<li><a class="reference internal" href="#id3">2.2.2 Fast Movement Condition</a></li>
+<li><a class="reference internal" href="#table-5-demographics-for-the-fast-movement-condition">Table 5. Demographics for the fast movement condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">2.3 Filtering Lost Trials</a><ul>
+<li><a class="reference internal" href="#slow-movement-condition-top-quartile">2.3.1 Slow Movement Condition - Top Quartile</a></li>
+<li><a class="reference internal" href="#figure-4-distribution-of-difference-times-in-the-slow-condition">Figure 4. Distribution of difference times in the slow condition</a></li>
+<li><a class="reference internal" href="#figure-5-comparison-of-filtered-and-non-filtered-distributions-of-difference-times-in-the-slow-condition">Figure 5. Comparison of filtered and non-filtered distributions of difference times in the slow condition</a></li>
+<li><a class="reference internal" href="#fast-movement-condition-top-quartile">2.3.2 Fast Movement Condition - Top Quartile</a></li>
+<li><a class="reference internal" href="#figure-6-distribution-of-difference-times-in-the-fast-condition">Figure 6. Distribution of difference times in the fast condition</a></li>
+<li><a class="reference internal" href="#figure-7-comparison-of-filtered-and-non-filtered-distributions-of-difference-times-in-the-fast-condition">Figure 7. Comparison of filtered and non-filtered distributions of difference times in the fast condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">2.4 Descriptive Statistics</a><ul>
+<li><a class="reference internal" href="#task-performance-for-slow-movement-condition">2.4.1 Task Performance for Slow Movement Condition</a></li>
+<li><a class="reference internal" href="#table-6-descriptive-statistics-for-task-performance-in-the-slow-movement-condition">Table 6. Descriptive statistics for task performance in the slow movement condition</a></li>
+<li><a class="reference internal" href="#task-performance-for-fast-movement-condition">2.4.2 Task Performance for Fast Movement Condition</a></li>
+<li><a class="reference internal" href="#table-7-descriptive-statistics-for-task-performance-in-the-fast-movement-condition">Table 7. Descriptive statistics for task performance in the fast movement condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#simulation-statistics">2.5 Simulation Statistics</a><ul>
+<li><a class="reference internal" href="#id6">2.5.1 Slow Movement Condition</a></li>
+<li><a class="reference internal" href="#table-8-descriptive-statistics-for-simulation-variables-in-the-fast-condition">Table 8. Descriptive statistics for simulation variables in the fast condition</a></li>
+<li><a class="reference internal" href="#id7">2.5.2 Fast Movement Condition</a></li>
+<li><a class="reference internal" href="#table-9-descriptive-statistics-for-simulation-variables-in-the-fast-condition">Table 9. Descriptive statistics for simulation variables in the fast condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">2.6 Mean Centering Simulation Time</a><ul>
+<li><a class="reference internal" href="#id9">2.6.1 Slow Movement Condition</a></li>
+<li><a class="reference internal" href="#figure-8-relationship-between-mean-centered-simulation-time-and-path-time-for-the-slow-movement-condition">Figure 8. Relationship between mean centered simulation time and path time for the slow movement condition</a></li>
+<li><a class="reference internal" href="#id10">2.6.2 Fast Movement Condition</a></li>
+<li><a class="reference internal" href="#figure-9-relationship-between-mean-centered-simulation-time-and-path-time-for-the-fast-movement-condition">Figure 9. Relationship between mean centered simulation time and path time for the fast movement condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">2.7 Temporal Compression Rate</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#anova">3. ANOVA</a><ul>
+<li><a class="reference internal" href="#all-movement-groups">3.1. All Movement Groups</a><ul>
+<li><a class="reference internal" href="#figure-10-anova-output-for-performance-variables">Figure 10. ANOVA output for performance variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#comparison-of-compression-rates">4. Comparison of Compression Rates</a><ul>
+<li><a class="reference internal" href="#id12">4.1 All Movement Groups</a><ul>
+<li><a class="reference internal" href="#figure-11-histograms-showing-distributions-of-compression-rates-and-their-log-transformations">Figure 11. Histograms showing distributions of compression rates and their log transformations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#regression-analysis">5. Regression Analysis</a><ul>
+<li><a class="reference internal" href="#regression-equation-for-slow-movement-condition">5.1 Regression Equation for Slow Movement Condition</a><ul>
+<li><a class="reference internal" href="#figure-12-regression-output-for-slow-movement-condition">Figure 12. Regression output for slow movement condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#regression-equation-for-the-medium-movement-condition">5.2 Regression Equation for the Medium Movement Condition</a><ul>
+<li><a class="reference internal" href="#figure-13-regression-output-for-medium-movement-condition">Figure 13. Regression output for medium movement condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#regression-equation-for-the-fast-movement-condition">5.3 Regression Equation for the Fast Movement Condition</a><ul>
+<li><a class="reference internal" href="#figure-14-regression-output-for-fast-movement-condition">Figure 14. Regression output for fast movement condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#regression-plots">5.4 Regression Plots</a><ul>
+<li><a class="reference internal" href="#figure-15-plots-showing-relationship-between-predictors-and-simulation-time-for-each-movement-condition">Figure 15. Plots showing relationship between predictors and simulation time for each movement condition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">temporal_compression</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Temporal Compression Study</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="temporal-compression-study">
 <h1>Temporal Compression Study<a class="headerlink" href="#temporal-compression-study" title="Permalink to this headline">¶</a></h1>
@@ -1575,6 +1774,8 @@ time during the simulations.</p>
 </div>
 <div class="section" id="anova">
 <h2>3. ANOVA<a class="headerlink" href="#anova" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="all-movement-groups">
+<h3>3.1. All Movement Groups<a class="headerlink" href="#all-movement-groups" title="Permalink to this headline">¶</a></h3>
 <p>In this section, we conduct an ANOVA to compare group performance on the
 performance variables.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="c"># clone dataframes</span>
@@ -1598,9 +1799,15 @@ performance variables.</p>
 <div class="figure">
 <img alt="" src="_images/performance_anova.png" />
 </div>
+<div class="section" id="figure-10-anova-output-for-performance-variables">
+<h4>Figure 10. ANOVA output for performance variables<a class="headerlink" href="#figure-10-anova-output-for-performance-variables" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
 </div>
 <div class="section" id="comparison-of-compression-rates">
 <h2>4. Comparison of Compression Rates<a class="headerlink" href="#comparison-of-compression-rates" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>4.1 All Movement Groups<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>In this section, we&#8217;ll compare the compression rates between groups to
 test whether they&#8217;re adaptive or constant across encoding speeds. This
 addresses our research question 2. We also log transform the compression
@@ -1691,7 +1898,9 @@ either. Let&#8217;s plot this to visualize it better.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
 </pre></div>
 </div>
-<img alt="_images/output_126_0.png" src="_images/output_126_0.png" />
+<img alt="_images/output_129_0.png" src="_images/output_129_0.png" />
+<div class="section" id="figure-11-histograms-showing-distributions-of-compression-rates-and-their-log-transformations">
+<h4>Figure 11. Histograms showing distributions of compression rates and their log transformations<a class="headerlink" href="#figure-11-histograms-showing-distributions-of-compression-rates-and-their-log-transformations" title="Permalink to this headline">¶</a></h4>
 <p>Based on these plots we can see that although not normal, the
 compression rates of the three conditions follow the same distribution.
 As such, to test group differences we&#8217;ll use the non-parametric
@@ -1743,6 +1952,8 @@ For the [2] condition, the mean compression rate is 2.82791032033 and the standa
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="regression-analysis">
 <h2>5. Regression Analysis<a class="headerlink" href="#regression-analysis" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we run stepwise regression analyses for each movement
@@ -1762,17 +1973,22 @@ repo.</strong></p>
 <div class="figure">
 <img alt="" src="_images/slow_reg_results.png" />
 </div>
+<div class="section" id="figure-12-regression-output-for-slow-movement-condition">
+<h4>Figure 12. Regression output for slow movement condition<a class="headerlink" href="#figure-12-regression-output-for-slow-movement-condition" title="Permalink to this headline">¶</a></h4>
 <p>Our analysis identified a statistically significant regression equation
 that includes both path time and simulation confidence as predictor
 variables. Importantly, the longer the subsequent path time, the longer
 the simulation episode, reflecting that temporal information is retained
 (in a compressed form) during mental simulations.</p>
 </div>
+</div>
 <div class="section" id="regression-equation-for-the-medium-movement-condition">
 <h3>5.2 Regression Equation for the Medium Movement Condition<a class="headerlink" href="#regression-equation-for-the-medium-movement-condition" title="Permalink to this headline">¶</a></h3>
 <div class="figure">
 <img alt="" src="_images/medium_reg_results.png" />
 </div>
+<div class="section" id="figure-13-regression-output-for-medium-movement-condition">
+<h4>Figure 13. Regression output for medium movement condition<a class="headerlink" href="#figure-13-regression-output-for-medium-movement-condition" title="Permalink to this headline">¶</a></h4>
 <p>For the medium condition, we also found a statistically significant
 regression equation. As with the slow condition, the first predictor
 variable in the equation is path time. However, in this condition we
@@ -1784,15 +2000,19 @@ research Q3 and shows that the better the fidelity of the spatial
 memories, the more readily participants are able to simulate routes
 based on them.</p>
 </div>
+</div>
 <div class="section" id="regression-equation-for-the-fast-movement-condition">
 <h3>5.3 Regression Equation for the Fast Movement Condition<a class="headerlink" href="#regression-equation-for-the-fast-movement-condition" title="Permalink to this headline">¶</a></h3>
 <div class="figure">
 <img alt="" src="_images/fast_reg_results.png" />
 </div>
+<div class="section" id="figure-14-regression-output-for-fast-movement-condition">
+<h4>Figure 14. Regression output for fast movement condition<a class="headerlink" href="#figure-14-regression-output-for-fast-movement-condition" title="Permalink to this headline">¶</a></h4>
 <p>As in both other movement conditions, we have a statistically
 significant regression equation with path time as the first predictor
 variable. We also find an effect of memory fidelity here with more
 spatially coherent memories facilitating quicker mental simulations.</p>
+</div>
 </div>
 <div class="section" id="regression-plots">
 <h3>5.4 Regression Plots<a class="headerlink" href="#regression-plots" title="Permalink to this headline">¶</a></h3>
@@ -1841,64 +2061,71 @@ spatially coherent memories facilitating quicker mental simulations.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Fast Movement&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<img alt="_images/output_147_0.png" src="_images/output_147_0.png" />
-<p>10 Figures, 9 Tables</p>
+<img alt="_images/output_153_0.png" src="_images/output_153_0.png" />
+<div class="section" id="figure-15-plots-showing-relationship-between-predictors-and-simulation-time-for-each-movement-condition">
+<h4>Figure 15. Plots showing relationship between predictors and simulation time for each movement condition<a class="headerlink" href="#figure-15-plots-showing-relationship-between-predictors-and-simulation-time-for-each-movement-condition" title="Permalink to this headline">¶</a></h4>
+</div>
 </div>
 </div>
 </div>
 
 
+           </div>
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/index.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Aiden Arnold.
+
     </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2015, Aiden Arnold.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
-      
-      |
-      <a href="_sources/index.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
-    
-  </body>
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

@@ -1756,6 +1756,9 @@ time during the simulations.
 3. ANOVA
 --------
 
+3.1. All Movement Groups
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 In this section, we conduct an ANOVA to compare group performance on the
 performance variables.
 
@@ -1782,8 +1785,14 @@ performance variables.
 .. figure:: performance_anova.png
    :alt: 
 
+Figure 10. ANOVA output for performance variables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 4. Comparison of Compression Rates
 ----------------------------------
+
+4.1 All Movement Groups
+~~~~~~~~~~~~~~~~~~~~~~~
 
 In this section, we'll compare the compression rates between groups to
 test whether they're adaptive or constant across encoding speeds. This
@@ -1886,11 +1895,11 @@ either. Let's plot this to visualize it better.
 
 
 
-.. image:: output_126_0.png
+.. image:: output_129_0.png
 
 
-Figure 10. Comparison of Histograms for Compression Rates and Log Transformed Compression Rates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Figure 11. Histograms showing distributions of compression rates and their log transformations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Based on these plots we can see that although not normal, the
 compression rates of the three conditions follow the same distribution.
@@ -1981,6 +1990,9 @@ repo.**
 .. figure:: slow_reg_results.png
    :alt: 
 
+Figure 12. Regression output for slow movement condition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Our analysis identified a statistically significant regression equation
 that includes both path time and simulation confidence as predictor
 variables. Importantly, the longer the subsequent path time, the longer
@@ -1992,6 +2004,9 @@ the simulation episode, reflecting that temporal information is retained
 
 .. figure:: medium_reg_results.png
    :alt: 
+
+Figure 13. Regression output for medium movement condition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For the medium condition, we also found a statistically significant
 regression equation. As with the slow condition, the first predictor
@@ -2009,6 +2024,9 @@ based on them.
 
 .. figure:: fast_reg_results.png
    :alt: 
+
+Figure 14. Regression output for fast movement condition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As in both other movement conditions, we have a statistically
 significant regression equation with path time as the first predictor
@@ -2066,8 +2084,9 @@ spatially coherent memories facilitating quicker mental simulations.
 
 
 
-.. image:: output_147_0.png
+.. image:: output_153_0.png
 
 
-10 Figures, 9 Tables
+Figure 15. Plots showing relationship between predictors and simulation time for each movement condition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
