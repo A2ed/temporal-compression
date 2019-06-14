@@ -1,7 +1,7 @@
 # temporal-compression
 This repository contains the code for my publication **Mental simulation of routes during navigation involves adaptive temporal compression**
 
-You can access the full publication in the journal Cognitiion [at this link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5143185/)
+You can access the full publication in the journal Cognition [at this link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5143185/)
 
 The study looks at the timecourse of mental simulations that are operationalized as imagined movement through a city. The central idea of the paper is that environmental representations are encoded in neural indices in the hippocampus, and that the recapitulation of the neural indices that code a specific route through the environment are dynamic. That is, there is not a one-to-one mapping of encoded patterns of neural activity and those that occur when the memory is reinstated and used.
 
